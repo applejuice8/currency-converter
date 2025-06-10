@@ -40,7 +40,7 @@ A simple, interactive currency converter web app built with **Flask**, **JavaScr
 
 3. **Install dependencies**
    ```bash
-   pip install flask requests
+   pip install -r requirements.txt
    ```
 
 4. **Run the Flask app**
@@ -67,6 +67,7 @@ currency-converter/
 │   └── styles.css
 │
 ├── app.py
+├── requirements.txt
 └── screenshot.png
 ```
 
