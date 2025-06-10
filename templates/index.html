@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div id="all">
+        
+        <header>
+            <h1>Currency Converter</h1>
+            <p>using <a href="https://frankfurter.dev" target="_blank">Frankfurter API <i class="fa-solid fa-up-right-from-square"></i></a></p>
+        </header>
+
+        <div class="container">
+            <div class="from-currency-div">
+            <h3>Amount</h3>
+                <div class="from-currency-input">
+                    <input name="amount" class="amount" min="0" oninput="fetchInfo('amountBox')">
+
+                    <select name="from-currency" class="from-currency" onchange="fetchInfo('amountBox')">
+                        {% for currency in currencies%}
+                            <option value="{{ currency }}" {% if loop.first %} selected {% endif %}>{{ currency }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="to-currency-div">
+            <h3>Converted to</h3>
+                <div class="to-currency-input">
+                    <input inputmode="decimal" name="result" class="result" min="0" oninput="fetchInfo('resultBox')">
+
+                    <select name="to-currency" class="to-currency" onchange="fetchInfo('amountBox')">
+                        {% for currency in currencies%}
+                            <option value="{{ currency }}" {% if loop.index == 2 %} selected {% endif %}>{{ currency }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+            
+        <h3 class="exchange-rate"></h3>
+    </div>
+
+{% endblock %}
