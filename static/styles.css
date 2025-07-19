@@ -1,76 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Savate&display=swap');
-
-* {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1d24;
     margin: 0;
     padding: 0;
-}
-
-body {
-    background-color: darkgreen;
-    font-family: 'Savate', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #e0e0e0;
 }
 
 #all {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #f8f9fa;
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    color: #a0a8b0;
+}
+
+header a {
+    color: #6ab7ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #3d9dff;
+}
+
+header i {
+    font-size: 0.8em;
 }
 
 .container {
-    display: flex;
-    gap: 10vw;
-    justify-content: center;
-    background-color:darkgrey;
-    padding: 2em;
-    border-radius: 50px;
-    font-size: 2rem;
+    background-color: #252a33;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #2f3541;
 }
 
 .from-currency-div, .to-currency-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.from-currency-div h3, .to-currency-div h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #a0a8b0;
+    font-weight: 500;
 }
 
 .from-currency-input, .to-currency-input {
     display: flex;
-    gap: 1vw;
-    align-items: center;
+    border: 1px solid #3a404b;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #2f3541;
+    transition: border-color 0.3s;
+}
+
+.from-currency-input:focus-within, 
+.to-currency-input:focus-within {
+    border-color: #6ab7ff;
 }
 
 .from-currency-input input, .to-currency-input input {
-    height: 90%;
-    font-size: 70%;
-    background-color: rgb(87, 82, 82);
-    color: white;
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    font-size: 1.2rem;
+    outline: none;
+    background-color: #2f3541;
+    color: #f8f9fa;
 }
 
 .from-currency-input select, .to-currency-input select {
-    font-size: 80%;
-    background-color: rgb(53, 49, 49);
-    color: white;
-}
-
-header {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 5vh;
-    font-size: 200%;
+    padding: 0.8rem;
+    border: none;
+    border-left: 1px solid #3a404b;
+    background-color: #2f3541;
+    color: #f8f9fa;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a0a8b0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); 
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1rem;
+    padding-right: 2rem;
 }
 
 .exchange-rate {
-    color: white;
-    font-size: 150%;
+    text-align: center;
+    color: #a0a8b0;
+    font-weight: normal;
+    margin: 0;
+    font-size: 1rem;
 }
 
-a {
-    color: white;
-}
-
-a:hover {
-    color: blue;
+@media (max-width: 600px) {
+    #all {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .from-currency-input input, 
+    .to-currency-input input,
+    .from-currency-input select, 
+    .to-currency-input select {
+        padding: 0.6rem;
+        font-size: 1rem;
+    }
 }
